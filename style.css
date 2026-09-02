@@ -1,0 +1,23 @@
+:root {
+    --pink: hsl(346, 58%, 79%);
+    --pink-deep: hsl(341, 43%, 63%);
+    --pink-light: hsl(346, 62%, 92%);
+    --pink-pale: hsl(348, 71%, 97%);
+
+    --gold: hsl(40, 50%, 57%);
+    --gold-light: hsl(42, 61%, 72%);
+    --gold-dark: hsl(38, 49%, 41%);
+
+    --cream: hsl(24, 100%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --text: hsl(337, 18%, 20%);
+    --text-soft: hsl(340, 11%, 42%);
+
+    --border: hsl(347, 29%, 87%);
+    --shadow: hsla(337, 18%, 20%, 0.1);
+}
+
+body{
+    background-color: var(--cream);
+    
+}
