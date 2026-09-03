@@ -373,7 +373,6 @@ section {
   transform: translateY(-35px) scale(1.25);
 }
 
-
 @media (max-width: 780px) {
   .collections-grid {
     grid-template-columns: repeat(2, 1fr);

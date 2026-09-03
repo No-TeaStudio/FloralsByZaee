@@ -37,8 +37,11 @@ body {
 
 /* --- Navigation Bar --- */
 
-nav a {
+ a {
   text-decoration: none;
+}
+
+nav a {
   color: var(--pink-deep);
 }
 
@@ -248,5 +251,274 @@ nav .navigation-container {
   .hero-art {
     order: -1;
     aspect-ratio: 4/3;
+  }
+}
+
+/* ---------- collection page ---------- */
+.collection-page h1,
+.collection-page h2,
+.collection-page h3 {
+  font-family: "Cormorant", serif;
+  font-weight: 500;
+}
+.collection-page .brandmark {
+  color: var(--text);
+  font-family: "Cormorant", serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 500;
+}
+.collection-page nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+}
+.collection-page .navlinks {
+  display: flex;
+  gap: 40px;
+  font-size: 0.95rem;
+}
+.collection-page .navlinks a {
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.25s ease;
+}
+.collection-page .navlinks a:hover {
+  color: var(--pink-deep);
+}
+.collection-page .navlinks a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.collection-page .navlinks a:hover::after {
+  transform: scaleX(1);
+}
+.collection-hero {
+  padding: 32px 0 84px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--pink-pale), var(--cream));
+  border-bottom: 1px solid var(--border);
+}
+.collection-hero .wrap {
+  max-width: 760px;
+}
+.collection-hero .kicker,
+.collection-enquire .kicker {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--pink-deep);
+  font-family: "Cormorant", serif;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.sparkle-word {
+  position: relative;
+  display: inline-block;
+  color: var(--gold-dark);
+  text-shadow: 0 0 10px hsla(42, 61%, 72%, 0.55);
+}
+.sparkle-word::before,
+.sparkle-word::after {
+  content: "✦";
+  position: absolute;
+  color: var(--gold);
+  font-family: sans-serif;
+  font-size: 0.45em;
+  font-style: normal;
+  animation: sparkle-twinkle 1.8s ease-in-out infinite;
+}
+.sparkle-word::before {
+  top: -0.55em;
+  right: -0.65em;
+}
+.sparkle-word::after {
+  bottom: -0.2em;
+  left: -0.7em;
+  animation-delay: 0.8s;
+}
+@keyframes sparkle-twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.75) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(20deg);
+  }
+}
+.collection-hero h1 {
+  font-size: clamp(3rem, 7vw, 5.4rem);
+  line-height: 0.98;
+}
+.collection-hero h1 em {
+  color: var(--pink-deep);
+  font-style: italic;
+}
+.collection-hero p {
+  max-width: 52ch;
+  margin: 24px auto 0;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+}
+.collection-jump {
+  padding: 28px 0 0;
+}
+.collection-jump .wrap,
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.collection-jump .wrap {
+  gap: 18px;
+}
+.collection-jump-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 150px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--pink-light);
+}
+.collection-jump-card::after,
+.product-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, hsla(337, 18%, 12%, 0.7), transparent 70%);
+}
+.collection-jump-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.collection-jump-card:hover img,
+.product-card:hover img {
+  transform: scale(1.05);
+}
+.collection-jump-card span {
+  position: relative;
+  z-index: 1;
+  padding: 18px 20px;
+  color: var(--white);
+  font-family: "Cormorant", serif;
+  font-size: 1.65rem;
+}
+.collection-section {
+  padding: 86px 0;
+}
+.collection-section-alt {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.collection-section-heading {
+  max-width: 600px;
+  margin-bottom: 34px;
+}
+.collection-section-heading .eyebrow {
+  color: var(--gold-dark);
+  font-family: "Cormorant", serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.collection-section-heading h2 {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  line-height: 1;
+  margin: 5px 0 12px;
+}
+.collection-section-heading p {
+  max-width: 50ch;
+  color: var(--text-soft);
+}
+.product-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--pink-light);
+}
+.product-card::after {
+  background: linear-gradient(0deg, hsla(337, 18%, 12%, 0.76), transparent 58%);
+}
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.product-card-body {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: 22px;
+  color: var(--white);
+}
+.product-card-body h3 {
+  color: var(--white);
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+.product-card-body span {
+  display: block;
+  margin-top: 6px;
+  color: hsla(0, 0%, 100%, 0.86);
+  font-size: 0.86rem;
+}
+.collection-enquire {
+  padding: 92px 0;
+  text-align: center;
+  background: var(--text);
+  color: var(--white);
+}
+.collection-enquire h2 {
+  color: var(--white);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+.collection-enquire p {
+  max-width: 46ch;
+  margin: 14px auto 28px;
+  color: hsla(0, 0%, 100%, 0.8);
+}
+.collection-enquire .btn-primary {
+  background: var(--pink-deep);
+  color: var(--white);
+}
+.collection-enquire .btn-primary:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+@media (max-width: 780px) {
+  .collection-page .navlinks {
+    display: none;
+  }
+  .collection-hero {
+    padding: 32px 0 62px;
+  }
+  .collection-jump .wrap,
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .collection-jump-card {
+    min-height: 120px;
+  }
+  .product-card {
+    aspect-ratio: 4 / 4.6;
   }
 }
