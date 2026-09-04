@@ -3,27 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FloralsByZaee</title>
+    <title>FloralsByZaee | Handmade Bouquets, Leeds</title>
+    <meta name="description" content="Handmade ribbon and foam-rose bouquets, plushie arrangements and personalised light-up gifts — made to order in Leeds.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("fbz-theme") === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
 </head>
 <body>
     <nav>
         <div class="navigation-container">
-            <a href="#" class="hero-title">FloralsByZaee</a>
+            <a href="index.html" class="hero-title">FloralsByZaee</a>
             <div class="navLinks">
                 <a href="collection.html">Collections</a>
                 <a href="#about">Our Story</a>
                 <a href="#peek">First Look</a>
                 <a href="#contact">Contact</a>
             </div>
-            <a href="#contact" class="nav-cta">Enquire</a>
+            <div class="nav-right">
+                <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.4a8.5 8.5 0 1 1-9.9-11.9 0.6 0.6 0 0 1 0.7 0.8 7 7 0 0 0 9.1 9.1 0.6 0.6 0 0 1 0.8 0.7 8.6 8.6 0 0 1-0.7 1.3z"/></svg>
+                </button>
+                <a href="#contact" class="nav-cta">Enquire</a>
+            </div>
         </div>
     </nav>
 
 <header class="hero">
+  <div class="petal-field" aria-hidden="true">
+    <span class="petal">✿</span>
+    <span class="petal gold">❁</span>
+    <span class="petal">✿</span>
+    <span class="petal gold">✦</span>
+    <span class="petal">❁</span>
+    <span class="petal gold">✿</span>
+  </div>
   <div class="wrap">
     <div class="hero-copy">
       <span class="kicker">Handmade bouquets, Leeds</span>
@@ -35,10 +59,122 @@
       </div>
     </div>
     <div class="hero-art">
-        <img src="images/pinkBirthdayFlowersCloseZaee.jpg" alt="A close-up of a pink b  ouquet of flowers with a birthday congratulations.">
+        <img src="images/pinkBirthdayFlowersCloseZaee.jpg" alt="A close-up of a pink bouquet of flowers with a birthday congratulations.">
         <span class="hero-tag">Personalised &amp; light-up</span>
+        <span class="hero-badge">Made<br>to order</span>
     </div>
   </div>
 </header>
+
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.4-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.6-9.5 9-9.5 9z"/></svg>
+      <span>Handmade to order</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.6 6.6L21 9l-5 4.4L17.4 21 12 17.3 6.6 21 8 13.4 3 9l6.4-.4z"/></svg>
+      <span>Fully personalised</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+      <span>Never wilts</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M4 12l4-4M4 12l4 4"/></svg>
+      <span>Leeds pickup &amp; local delivery</span>
+    </div>
+  </div>
+</section>
+
+<section class="story-section" id="about">
+  <div class="petal-field" aria-hidden="true">
+    <span class="petal">❁</span>
+    <span class="petal gold">✿</span>
+  </div>
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-art">
+        <img src="images/FloralsByZaee-Logo.jpg" alt="Illustration of the FloralsByZaee florist holding a handmade bouquet">
+      </div>
+      <div class="story-copy">
+        <span class="eyebrow">The person behind the petals</span>
+        <h2>Every bouquet is <em>hand-rolled</em></h2>
+        <p>FloralsByZaee started as a way to make gifting feel personal again — every rose is shaped by hand, every wrap chosen to match the person it's for, and every detail (name bands, fairy lights, keepsake charms) is added because it means something.</p>
+        <p>Nothing here is mass produced. If you can picture it, it's worth asking about.</p>
+        <div class="story-stats">
+          <div><strong>100%</strong><span>Handmade</span></div>
+          <div><strong>4</strong><span>Signature collections</span></div>
+          <div><strong>∞</strong><span>Ways to personalise</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="peek-section" id="peek">
+  <div class="wrap">
+    <div class="section-heading">
+      <span class="eyebrow">Fresh from the workshop</span>
+      <h2>A first look</h2>
+      <p>A handful of recent makes — the full collection has plenty more where these came from.</p>
+    </div>
+    <div class="peek-strip">
+      <a href="collection.html#valentine"><img src="images/glitterRedILY_bl.jpg" alt="Red glitter I love you bouquet"></a>
+      <a href="collection.html#plushies"><img src="images/plushyBear_tl.jpg" alt="Teddy bear plushie bouquet"></a>
+      <a href="collection.html#mothers-day"><img src="images/artificialPink_tl.jpg" alt="Pink artificial rose bouquet"></a>
+      <a href="collection.html#birthdays"><img src="images/redbull_bl.jpg" alt="Blue and white bouquet with Red Bull cans"></a>
+      <a href="collection.html#valentine"><img src="images/heartbasket_tr.jpg" alt="Heart shaped basket of red roses"></a>
+      <a href="collection.html#mothers-day"><img src="images/fuzzywirePink_br.jpg" alt="Pink fuzzy wire flower bouquet"></a>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="petal-field" aria-hidden="true">
+    <span class="petal">✿</span>
+    <span class="petal gold">❁</span>
+  </div>
+  <div class="wrap">
+    <div class="contact-card">
+      <span class="kicker">Made around your idea</span>
+      <h2>Something in mind?</h2>
+      <p>Tell us who it's for, your favourite colours, and any little details that will make it theirs.</p>
+      <a href="mailto:hello@floralsbyzaee.com" class="btn-primary">Start your order</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <a href="index.html" class="hero-title">FloralsByZaee</a>
+      <p>Handmade bouquets built to last, designed around the person you're giving them to. Based in Leeds.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="...">Valentine</a>
+        <a href="shopPlushies.html">Plushies</a>
+        <a href="shopMothersDay.html">Mother's Day</a>
+        <a href="shopBirthdays.html">Birthdays &amp; Personalised</a>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <a href="#about">Our Story</a>
+        <a href="collection.html">All Collections</a>
+        <a href="mailto:hello@floralsbyzaee.com">Enquire</a>
+      </div>
+      <div class="footer-col">
+        <h4>Find us</h4>
+        <span>Leeds, UK</span>
+        <span>hello@floralsbyzaee.com</span>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">&copy; <span class="year"></span> FloralsByZaee. Handmade with love.</div>
+</footer>
+
+<script src="site.js" defer></script>
 </body>
 </html>
