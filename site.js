@@ -33,44 +33,6 @@
   });
   observer.observe(document.body, { childList: true, subtree: true });
 
-  /* ---------- dark mode toggle ---------- */
-  const root = document.documentElement;
-  const STORAGE_KEY = "fbz-theme";
-
-  const applyTheme = (theme) => {
-    if (theme === "dark") {
-      root.setAttribute("data-theme", "dark");
-    } else {
-      root.removeAttribute("data-theme");
-    }
-  };
-
-  const getStoredTheme = () => {
-    try {
-      return localStorage.getItem(STORAGE_KEY);
-    } catch (e) {
-      return null;
-    }
-  };
-
-  const setStoredTheme = (theme) => {
-    try {
-      localStorage.setItem(STORAGE_KEY, theme);
-    } catch (e) {
-      /* ignore */
-    }
-  };
-
-  document.querySelectorAll(".theme-toggle").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const isDark = root.getAttribute("data-theme") === "dark";
-      const next = isDark ? "light" : "dark";
-      applyTheme(next);
-      setStoredTheme(next);
-      btn.setAttribute("aria-pressed", String(!isDark));
-    });
-    btn.setAttribute("aria-pressed", String(root.getAttribute("data-theme") === "dark"));
-  });
 })();
 
 (() => {

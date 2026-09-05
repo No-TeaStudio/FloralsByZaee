@@ -2,71 +2,35 @@
    FloralsByZaee - stylesheet
    ========================================================= */
 :root {
-  --pink: hsl(346, 58%, 79%);
   --pink-deep: hsl(341, 43%, 63%);
   --pink-light: hsl(346, 62%, 92%);
-  --pink-pale: hsl(348, 71%, 97%);
+  --pink-pale: hsl(338, 22%, 13%);
 
   --gold: hsl(40, 50%, 57%);
   --gold-light: hsl(42, 61%, 72%);
   --gold-dark: hsl(38, 49%, 41%);
 
-  --cream: hsl(24, 100%, 98%);
   --white: hsl(0, 0%, 100%);
-  --text: hsl(337, 18%, 20%);
-  --text-soft: hsl(340, 11%, 42%);
-
-  --border: hsl(347, 29%, 87%);
-  --shadow: hsla(337, 18%, 20%, 0.1);
-
-  --ink: hsl(337, 24%, 16%);
+  --text: hsl(346, 40%, 94%);
+  --text-soft: hsl(345, 18%, 74%);
+  --ink: hsl(346, 40%, 94%);
   --rose-ink: hsl(342, 39%, 48%);
-  --surface-warm: hsl(30, 100%, 99%);
-  --surface-pink: hsl(346, 57%, 95%);
-  --skeleton-a: hsl(346, 45%, 91%);
-  --skeleton-b: hsl(346, 55%, 97%);
+  --skeleton-a: hsl(338, 20%, 16%);
+  --skeleton-b: hsl(338, 24%, 20%);
 
-  /* semantic aliases: these are what re-theme in dark mode */
-  --page-bg: var(--cream);
-  --surface: var(--white);
-  --surface-alt: var(--surface-pink);
-  --nav-bg: hsla(30, 100%, 99%, 0.84);
-  --line: var(--border);
-  --shadow-c: hsla(337, 24%, 16%, 0.1);
-  --overlay-strong: hsla(337, 18%, 12%, 0.76);
-  --overlay-soft: hsla(337, 18%, 12%, 0.55);
-  --card-bg: var(--pink-light);
-  --toggle-bg: hsla(0, 0%, 100%, 0.9);
-  --toggle-icon: var(--gold-dark);
-
-  /* fixed pair for solid dark buttons: independent of the --ink text-color flip,
-     so button contrast never breaks when the theme changes */
-  --btn-bg: var(--ink);
-  --btn-text: var(--white);
-  /* fixed ink for text sitting on a permanently-white chip (hero-tag, jump-tag) */
-  --chip-ink: hsl(337, 24%, 16%);
-}
-
-[data-theme="dark"] {
   --page-bg: hsl(338, 26%, 9%);
   --surface: hsl(338, 22%, 13%);
   --surface-alt: hsl(338, 24%, 15%);
   --nav-bg: hsla(338, 30%, 8%, 0.86);
   --line: hsl(338, 18%, 22%);
   --shadow-c: hsla(0, 0%, 0%, 0.45);
-  --text: hsl(346, 40%, 94%);
-  --text-soft: hsl(345, 18%, 74%);
   --overlay-strong: hsla(338, 40%, 4%, 0.82);
   --overlay-soft: hsla(338, 40%, 4%, 0.6);
   --card-bg: hsl(338, 24%, 17%);
-  --skeleton-a: hsl(338, 20%, 16%);
-  --skeleton-b: hsl(338, 24%, 20%);
-  --pink-pale: hsl(338, 22%, 13%);
-  --toggle-bg: hsl(338, 22%, 18%);
-  --toggle-icon: var(--gold-light);
-  --ink: hsl(346, 40%, 94%);
+
   --btn-bg: hsl(342, 55%, 48%);
-  --btn-text: hsl(0, 0%, 100%);
+  --btn-text: var(--white);
+  --chip-ink: hsl(337, 24%, 16%);
   color-scheme: dark;
 }
 
@@ -213,28 +177,6 @@ nav .wrap {
 @media (max-width: 780px) {
   .navLinks, .navlinks { display: none; }
 }
-
-/* --- theme toggle --- */
-.theme-toggle {
-  position: relative;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  background: var(--toggle-bg);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--toggle-icon);
-  flex-shrink: 0;
-  transition: background 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
-}
-.theme-toggle:hover { transform: rotate(14deg); }
-.theme-toggle svg { width: 17px; height: 17px; }
-.theme-toggle .icon-moon { display: none; }
-[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
-[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
 
 /* ---------- hero ---------- */
 .hero {
