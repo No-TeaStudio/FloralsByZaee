@@ -374,6 +374,7 @@ nav .wrap {
 .story-stats div span { font-size: 0.85rem; color: var(--text-soft); }
 @media (max-width: 900px) {
   .story-grid { grid-template-columns: 1fr; }
+  .story-stats { display: none; }
 }
 
 .peek-section { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -756,6 +757,53 @@ footer.site-footer .wrap.footer-bottom {
 }
 .shop-card-cta:hover { color: var(--gold-dark); }
 
+/* ---------- contact page ---------- */
+.contact-intro { max-width: 640px; }
+.contact-intro h1 { font-family: "Cormorant", serif; font-weight: 500; font-size: clamp(2.6rem, 5vw, 4.2rem); color: var(--ink); line-height: 1.02; }
+.contact-intro h1 em { font-style: italic; color: var(--pink-deep); }
+.contact-intro p { color: var(--text-soft); max-width: 50ch; margin-top: 18px; }
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.contact-method {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 30px 26px;
+  box-shadow: 0 14px 30px var(--shadow-c);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.contact-method:hover { transform: translateY(-6px); box-shadow: 0 22px 42px var(--shadow-c); border-color: var(--gold); }
+.contact-method-icon {
+  width: 48px; height: 48px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--card-bg); color: var(--gold);
+  flex-shrink: 0;
+}
+.contact-method-icon svg { width: 24px; height: 24px; }
+.contact-method h3 { font-family: "Cormorant", serif; font-weight: 500; font-size: 1.4rem; color: var(--ink); }
+.contact-method p { color: var(--text-soft); font-size: 0.95rem; }
+.contact-method-cta {
+  margin-top: auto;
+  font-size: 0.85rem; color: var(--rose-ink);
+  border-bottom: 1px solid var(--gold); padding-bottom: 2px; width: fit-content;
+  transition: color 0.2s ease;
+}
+.contact-method:hover .contact-method-cta { color: var(--gold-dark); }
+/* placeholder channels: not live yet, softened so they read as "coming soon" rather than broken */
+.contact-method-placeholder { opacity: 0.65; }
+.contact-method-placeholder .contact-method-cta { color: var(--text-soft); border-color: var(--line); }
+.contact-method-placeholder:hover { border-color: var(--line); transform: none; box-shadow: 0 14px 30px var(--shadow-c); }
+
+@media (max-width: 900px) { .contact-methods { grid-template-columns: 1fr; } }
+
 /* ---------- 404 ---------- */
 .error-page main {
   min-height: 62vh;
@@ -780,7 +828,7 @@ footer.site-footer .wrap.footer-bottom {
   color: var(--pink-deep);
   line-height: 1;
 }
-.error-card h1 { font-family: "Cormorant", serif; font-weight: 500; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--ink); margin: 6px 0 14px; }
+.error-card h1 { font-family: "Cormorant", serif; font-weight: 500; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--ink); margin: 6px 0 14px; white-space: nowrap; }
 .error-card p { color: var(--text-soft); margin-bottom: 30px; }
 .error-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
@@ -808,4 +856,5 @@ img.skeleton-target.is-loaded, img.skeleton-target.is-error { opacity: 1; animat
   .btnrow { gap: 12px; }
   .btn-primary, .btn-ghost { width: 100%; }
   .story-stats { gap: 22px; }
+  .error-card h1 { font-size: 1.35rem; }
 }
