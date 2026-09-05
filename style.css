@@ -1,5 +1,5 @@
 /* =========================================================
-   FloralsByZaee — stylesheet
+   FloralsByZaee - stylesheet
    ========================================================= */
 :root {
   --pink: hsl(346, 58%, 79%);
@@ -26,7 +26,7 @@
   --skeleton-a: hsl(346, 45%, 91%);
   --skeleton-b: hsl(346, 55%, 97%);
 
-  /* semantic aliases — these are what re-theme in dark mode */
+  /* semantic aliases: these are what re-theme in dark mode */
   --page-bg: var(--cream);
   --surface: var(--white);
   --surface-alt: var(--surface-pink);
@@ -38,6 +38,13 @@
   --card-bg: var(--pink-light);
   --toggle-bg: hsla(0, 0%, 100%, 0.9);
   --toggle-icon: var(--gold-dark);
+
+  /* fixed pair for solid dark buttons: independent of the --ink text-color flip,
+     so button contrast never breaks when the theme changes */
+  --btn-bg: var(--ink);
+  --btn-text: var(--white);
+  /* fixed ink for text sitting on a permanently-white chip (hero-tag, jump-tag) */
+  --chip-ink: hsl(337, 24%, 16%);
 }
 
 [data-theme="dark"] {
@@ -58,6 +65,8 @@
   --toggle-bg: hsl(338, 22%, 18%);
   --toggle-icon: var(--gold-light);
   --ink: hsl(346, 40%, 94%);
+  --btn-bg: hsl(342, 55%, 48%);
+  --btn-text: hsl(0, 0%, 100%);
   color-scheme: dark;
 }
 
@@ -264,8 +273,8 @@ nav .wrap {
 }
 .btnrow { display: flex; gap: 18px; flex-wrap: wrap; }
 .btn-primary {
-  background: var(--ink);
-  color: var(--white);
+  background: var(--btn-bg);
+  color: var(--btn-text);
   padding: 15px 32px;
   border-radius: 999px;
   font-size: 0.95rem;
@@ -281,6 +290,7 @@ nav .wrap {
   box-shadow: 0 16px 28px hsla(342, 39%, 48%, 0.22);
   transform: translateY(-2px);
 }
+[data-theme="dark"] .btn-primary:hover { background: var(--gold-dark); }
 .btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -316,7 +326,7 @@ nav .wrap {
   font-family: "Cormorant", serif;
   font-style: italic;
   font-size: 1rem;
-  color: var(--ink);
+  color: var(--chip-ink);
   box-shadow: 0 8px 20px var(--shadow-c);
 }
 .hero-badge {
@@ -450,7 +460,10 @@ nav .wrap {
 .peek-strip a {
   position: relative;
   display: block;
+  width: 100%;
   aspect-ratio: 1/1;
+  min-width: 0;
+  min-height: 0;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -458,7 +471,7 @@ nav .wrap {
   transition: transform 0.3s ease;
 }
 .peek-strip a:hover { transform: translateY(-4px); }
-.peek-strip img { width: 100%; height: 100%; object-fit: cover; }
+.peek-strip img { display: block; width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 900px) { .peek-strip { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 520px) { .peek-strip { grid-template-columns: repeat(2, 1fr); } }
 
@@ -645,7 +658,7 @@ footer.site-footer .wrap {
 .collection-jump-card:hover img, .product-card:hover img { transform: scale(1.05); }
 .jump-tag {
   position: absolute; left: 16px; bottom: 26%; z-index: 1;
-  background: hsla(0, 0%, 100%, 0.94); color: var(--ink);
+  background: hsla(0, 0%, 100%, 0.94); color: var(--chip-ink);
   padding: 8px 16px; border-radius: 999px;
   font-family: "Cormorant", serif; font-style: italic; font-size: 1.1rem;
   box-shadow: 0 8px 18px var(--shadow-c);
@@ -666,8 +679,11 @@ footer.site-footer .wrap {
 .collection-section { padding: 86px 0; position: relative; }
 .collection-section-alt { background: linear-gradient(135deg, var(--surface-alt), var(--surface)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .collection-section-heading {
-  max-width: 640px; margin: 0 auto 34px; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  max-width: none; margin: 0 0 34px; display: flex; flex-direction: row-reverse;
+  align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  text-align: right;
 }
+.collection-section-heading > div { margin-left: auto; }
 .collection-section-heading .eyebrow { color: var(--gold-dark); font-family: "Cormorant", serif; font-size: 1.2rem; font-style: italic; }
 [data-theme="dark"] .collection-section-heading .eyebrow { color: var(--gold-light); }
 .collection-section-heading h2 { font-size: clamp(2.5rem, 5vw, 3.8rem); line-height: 1; margin: 5px 0 12px; color: var(--ink); }
@@ -701,19 +717,20 @@ footer.site-footer .wrap {
 .gallery-section { padding: 70px 0 86px; position: relative; overflow: hidden; }
 .gallery-strip {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 130px));
+  justify-content: center;
+  gap: 12px;
 }
 .gallery-strip a {
-  position: relative; display: block; aspect-ratio: 1/1;
-  border-radius: 14px; overflow: hidden;
+  position: relative; display: block; width: 100%; aspect-ratio: 1/1;
+  min-width: 0; min-height: 0;
+  border-radius: 12px; overflow: hidden;
   border: 1px solid var(--line);
-  box-shadow: 0 10px 22px var(--shadow-c);
+  box-shadow: 0 8px 18px var(--shadow-c);
 }
-.gallery-strip img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.gallery-strip img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
 .gallery-strip a:hover img { transform: scale(1.08); }
-.gallery-strip a.wide { grid-column: span 2; }
-@media (max-width: 900px) { .gallery-strip { grid-template-columns: repeat(3, 1fr); } .gallery-strip a.wide { grid-column: span 1; } }
+@media (max-width: 560px) { .gallery-strip { grid-template-columns: repeat(auto-fit, minmax(84px, 104px)); gap: 9px; } }
 
 /* testimonial / trust ribbon */
 .ribbon-section {
@@ -748,7 +765,8 @@ footer.site-footer .wrap {
   .product-grid { grid-template-columns: 1fr; }
   .collection-jump-card { min-height: 120px; }
   .product-card { aspect-ratio: 4 / 4.6; }
-  .collection-section-heading { flex-direction: column; align-items: flex-start; }
+  .collection-section-heading { flex-direction: column-reverse; align-items: flex-end; text-align: right; }
+  .collection-section-heading > div { margin-left: 0; }
 }
 
 /* ---------- shop / single-collection pages ---------- */
@@ -864,5 +882,4 @@ img.skeleton-target.is-loaded, img.skeleton-target.is-error { opacity: 1; animat
   .btnrow { gap: 12px; }
   .btn-primary, .btn-ghost { width: 100%; }
   .story-stats { gap: 22px; }
-  .gallery-strip { grid-template-columns: repeat(2, 1fr); }
 }
