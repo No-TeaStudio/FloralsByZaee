@@ -460,6 +460,13 @@ footer.site-footer .wrap.footer-bottom {
   font-size: 0.8rem;
   color: hsla(0, 0%, 100%, 0.45);
 }
+.footer-credit { margin-left: 10px; }
+.footer-credit a { color: var(--gold-light); }
+.footer-credit a:hover { color: var(--white); }
+
+@media (max-width: 540px) {
+  .footer-credit { display: block; margin: 8px 0 0; }
+}
 
 /* ---------- collection page ---------- */
 .collection-page h1, .collection-page h2, .collection-page h3 {
