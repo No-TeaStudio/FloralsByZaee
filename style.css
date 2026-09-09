@@ -435,7 +435,10 @@ footer.site-footer .wrap {
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.14);
 }
 footer.site-footer .wrap.footer-bottom {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
   border-bottom: none;
 }
 .footer-brand { max-width: 320px; }
@@ -456,16 +459,22 @@ footer.site-footer .wrap.footer-bottom {
 .footer-col a:hover { color: var(--white); }
 .footer-bottom {
   padding-top: 20px;
-  text-align: center;
+  text-align: left;
   font-size: 0.8rem;
   color: hsla(0, 0%, 100%, 0.45);
 }
-.footer-credit { margin-left: 10px; }
+.footer-copyright { white-space: nowrap; }
+.footer-credit { margin-left: auto; text-align: right; }
 .footer-credit a { color: var(--gold-light); }
 .footer-credit a:hover { color: var(--white); }
 
 @media (max-width: 540px) {
-  .footer-credit { display: block; margin: 8px 0 0; }
+  footer.site-footer .wrap.footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer-credit { margin-left: 0; text-align: left; }
 }
 
 /* ---------- collection page ---------- */
